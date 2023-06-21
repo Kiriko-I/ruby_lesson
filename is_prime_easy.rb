@@ -12,4 +12,4 @@ else
     end
 end
 
-print(is_prime)
+puts(is_prime)
