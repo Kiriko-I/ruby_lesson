@@ -1,5 +1,6 @@
+grothendieck = 57
 for i in 2..57 do
-    result = 57 % i
+    result = grothendieck % i
     if i != 57 && result == 0
         puts("NO")
         break
