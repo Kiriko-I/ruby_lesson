@@ -3,7 +3,7 @@ is_prime = "YES"
 if n == 1
     is_prime = "NO"
 else
-    for i in 2..(n - 1)
+    for i in 2..(n - 1) do
         result = n % i
         if result == 0
             is_prime = "NO"
