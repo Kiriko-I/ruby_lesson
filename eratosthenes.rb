@@ -1,18 +1,20 @@
-n = gets.to_i
-
 def eratosthenes(n)
-    if n == 0 || n == 1
-        is_prime = "NO"
-    else
-        i = (2..n).to_a
+    is_prime = ["YES"] * (n+1)
+    is_prime[0], is_prime[1] = "NO", "NO"
+    primes = []
+    sq = (n**0.5+1).to_i
 
-        for i in 2..(n**0.5 + 1) do
-            result = n % i
-            if result == 0
-                is_prime = "NO"
-                break
+    (2..sq).each do |i|
+        if is_prime[i] == "YES"
+            primes << i
+            j = i * i
+            while j <= n+1
+                is_prime[j] ="NO"
+                j += i
             end
         end
-
-is_prime = "Yes"
-
+    end
+    return primes
+end
+n = gets.to_i
+puts(eratosthenes(n))
