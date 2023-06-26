@@ -1,5 +1,5 @@
 n = gets.to_i
-sq = (n**0.5).to_i + 1
+# sq = n**0.5 + 1
 top = n # 分子
 i = 2
 
