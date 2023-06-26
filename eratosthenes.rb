@@ -2,7 +2,7 @@ def eratosthenes(n)
     is_prime = ["YES"] * (n+1)
     is_prime[0], is_prime[1] = "NO", "NO"
     # primes = [] nまでの素数をすべて格納する配列
-    sq = (n**0.5+1).to_i
+    sq = n**0.5 + 1
     
     (2..sq).each do |i|
         if is_prime[i] == "YES"

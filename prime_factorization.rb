@@ -1,11 +1,13 @@
 n = gets.to_i
+sq = (n**0.5).to_i + 1
+top = n # 分子
+i = 2
 
-(2..(n**0.5+1)).each do |i|
-    top = n
-    top.each do |result|
-        result = top / i
-        puts result
-        if (top % i) != 0
-            
-        
-
+while i <= n do
+    if (top % i) == 0
+        puts i
+        top = top / i
+    else
+        i += 1
+    end
+end
