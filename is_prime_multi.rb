@@ -1,29 +1,21 @@
-# Rubyは大文字小文字を区別する
-# 大文字は定数、小文字は変数
+is_prime = [true] * 6000001
+is_prime[0], is_prime[1] = false, false
 
-def eratosthenes(n)
-    is_prime = ["YES"] * (n+1)
-    is_prime[0], is_prime[1] = "NO", "NO"
-    sq = n**0.5 + 1
-    
-    (2..sq).each do |i|
-        if is_prime[i] == "YES"
-            j = i * i
-            while j <= n+1
-                is_prime[j] ="NO"
-                j += i
-            end
+(2..6000001).each do |i|
+    if is_prime[i]
+        (i*2..6000001).each do |j|
+            is_prime[j] = false
+            j += i
         end
-    end
-    if is_prime[n] == "YES"
-        puts("pass")
-    else
-        puts("failure")
     end
 end
 
 N = gets.to_i
 (1..N).each do
     a = gets.to_i
-    eratosthenes(a) == "NO"
+    if is_prime[a]
+        puts("pass")
+    else
+        puts("failure")
+    end
 end
