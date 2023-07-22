@@ -18,15 +18,17 @@ b = divisor[j+1]
 num = []
 count = 1
 
-while b <= divisor.last do
-    if a == b
-        count += 1
-        j += 1
-    else
-        num.push(count+1)
-        j += 1
+while j+2 <= divisor.size do
+    if a != b
+        num.push(count)
         count = 1
+    else
+        count += 1
     end
+    if j+2 == divisor.size && a == b
+        num.push(count)
+    end
+    j += 1
 end
-puts(num)
+# puts(num)
 # puts(num.inject(:*))
